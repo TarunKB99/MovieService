@@ -49,7 +49,7 @@ public class MyControllerAdvice {
 
 	@ExceptionHandler(InvalidFieldsException.class)
 	public ResponseEntity<ErrorMessage> invalidFieldHandler(InvalidFieldsException invalidFieldException) {
-		return new ResponseEntity<ErrorMessage>(new ErrorMessage(new Timestamp(System.currentTimeMillis()), 404,
+		return new ResponseEntity<ErrorMessage>(new ErrorMessage(new Timestamp(System.currentTimeMillis()), 400,
 				"Bad field value", invalidFieldException.getMessage()), HttpStatus.BAD_REQUEST);
 
 	}
